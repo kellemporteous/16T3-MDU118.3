@@ -13,7 +13,7 @@ PoisonGas::~PoisonGas()
 {
 }
 
-void PoisonGas::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void PoisonGas::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imageposionGas = GameFrameworkInstance.GetLoadedImage("PosionGas");
 	GameFrameworkInstance.DrawImage(canvas, location, imageposionGas);

@@ -13,7 +13,7 @@ HealingSmoke::~HealingSmoke()
 {
 }
 
-void HealingSmoke::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void HealingSmoke::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imagehealingSmoke = GameFrameworkInstance.GetLoadedImage("HealingSmoke");
 	GameFrameworkInstance.DrawImage(canvas, location, imagehealingSmoke);

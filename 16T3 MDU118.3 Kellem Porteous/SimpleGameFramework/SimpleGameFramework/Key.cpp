@@ -13,7 +13,7 @@ Key::~Key()
 {
 }
 
-void Key::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void Key::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imagekey = GameFrameworkInstance.GetLoadedImage("Key");
 	GameFrameworkInstance.DrawImage(canvas, location, imagekey);

@@ -13,7 +13,7 @@ MeleeEnemy::~MeleeEnemy()
 {
 }
 
-void MeleeEnemy::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void MeleeEnemy::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imageMeleeEnemy = GameFrameworkInstance.GetLoadedImage("MeleeEnemy");
 	GameFrameworkInstance.DrawImage(canvas, location, imageMeleeEnemy);

@@ -13,7 +13,7 @@ Wall::~Wall()
 {
 }
 
-void Wall::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void Wall::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imagewall = GameFrameworkInstance.GetLoadedImage("Wall");
 	GameFrameworkInstance.DrawImage(canvas, location, imagewall);

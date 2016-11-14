@@ -23,8 +23,20 @@ void GameEntity::LoadFromText_Internal(std::istream& inputStream)
 
 void GameEntity::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
+	Gdiplus::Matrix objectTransform;
+	canvas.GetTransform(&objectTransform);
+
+	canvas.ScaleTransform(xScale, yScale);
+	Render_Internal(canvas, clientRect);
+
+	canvas.SetTransform(&objectTransform);
+}
+
+void GameEntity::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
+{
 
 }
+
 
 void GameEntity::SaveAsText(std::ostream& outputStream)
 {

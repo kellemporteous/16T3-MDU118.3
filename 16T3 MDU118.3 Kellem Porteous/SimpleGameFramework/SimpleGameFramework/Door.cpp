@@ -13,7 +13,7 @@ Door::~Door()
 {
 }
 
-void Door::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void Door::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imagedoor = GameFrameworkInstance.GetLoadedImage("Door");
 	GameFrameworkInstance.DrawImage(canvas, location, imagedoor);

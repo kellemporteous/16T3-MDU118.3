@@ -48,8 +48,8 @@ void GameManager::BeginPlay()
 	player1 -> location = Vector2i(1500, 1500);
 	player1 -> name = "Player1";
 	player1 -> rotation = 0.0f;
-	player1 -> xScale = 0.0f;
-	player1 -> yScale = 0.0f;
+	player1 -> xScale = 0.2f;
+	player1 -> yScale = 0.2f;
 	player1 -> imageName = "Player";
 	player1 -> health = 100;
 	player1 -> damage = 25;
@@ -60,8 +60,8 @@ void GameManager::BeginPlay()
 	meleeEnemy1 ->location = Vector2i(1800, 1800);
 	meleeEnemy1 -> name = "MeleeEnemy1";
 	meleeEnemy1 -> rotation = 0.0f;
-	meleeEnemy1 -> xScale = 0.0f;
-	meleeEnemy1 -> yScale = 0.0f;
+	meleeEnemy1 -> xScale = 0.1f;
+	meleeEnemy1 -> yScale = 0.1f;
 	meleeEnemy1 -> imageName = "MeleeEnemy";
 	meleeEnemy1 -> health = 50;
 	meleeEnemy1 -> damage = 10;
@@ -72,8 +72,8 @@ void GameManager::BeginPlay()
 	rangedEnemy1->location = Vector2i(2500, 2500);
 	rangedEnemy1->name = "RangedEnemy1";
 	rangedEnemy1->rotation = 0.0f;
-	rangedEnemy1->xScale = 0.0f;
-	rangedEnemy1->yScale = 0.0f;
+	rangedEnemy1->xScale = 0.1f;
+	rangedEnemy1->yScale = 0.1f;
 	rangedEnemy1->imageName = "RangedEnemy";
 	rangedEnemy1->health = 25;
 	rangedEnemy1->damage = 5;
@@ -84,8 +84,8 @@ void GameManager::BeginPlay()
 	key1 -> location = Vector2i(0, 1500);
 	key1 -> name = "Key1";
 	key1 -> rotation = 0.0f;
-	key1 -> xScale = 0.0f;
-	key1 -> yScale = 0.0f;
+	key1 -> xScale = 0.1f;
+	key1 -> yScale = 0.1f;
 	key1 -> imageName = "Key";
 	key1 -> pickUpRange = 1;
 
@@ -93,24 +93,24 @@ void GameManager::BeginPlay()
 	door1 -> location = Vector2i(100, 500);
 	door1 -> name = "Door1";
 	door1 -> rotation = 0.0f;
-	door1 -> xScale = 0.0f;
-	door1 -> yScale = 0.0f;
+	door1 -> xScale = 0.05f;
+	door1 -> yScale = 0.05f;
 	door1 -> imageName = "Door";
 
 	Wall* wall1 = new Wall();
 	wall1 -> location = Vector2i(100, 2500);
 	wall1 -> name = "Wall1";
 	wall1 -> rotation = 0.0f;
-	wall1 -> xScale = 0.0f;
-	wall1 -> yScale = 0.0f;
+	wall1 -> xScale = 0.1f;
+	wall1 -> yScale = 0.1f;
 	wall1 -> imageName = "Wall";
 
 	HealingSmoke* healingSmoke1 = new HealingSmoke();
 	healingSmoke1 -> location = Vector2i(1000, 1000);
 	healingSmoke1 -> name = "HealingSmoke1";
 	healingSmoke1 -> rotation = 0.0f;
-	healingSmoke1 -> xScale = 0.0f;
-	healingSmoke1 -> yScale = 0.0f;
+	healingSmoke1 -> xScale = 0.1f;
+	healingSmoke1 -> yScale = 0.1f;
 	healingSmoke1 -> imageName = "HealingSmoke";
 	healingSmoke1 -> addHealth = 5;
 	healingSmoke1 -> AOE = 3;
@@ -121,8 +121,8 @@ void GameManager::BeginPlay()
 	poisonGas1 -> location = Vector2i(2000, 2000);
 	poisonGas1 -> name = "PosionGas1";
 	poisonGas1 -> rotation = 0.0f;
-	poisonGas1 -> xScale = 0.0f;
-	poisonGas1 -> yScale = 0.0f;
+	poisonGas1 -> xScale = 0.1f;
+	poisonGas1 -> yScale = 0.1f;
 	poisonGas1 -> imageName = "PosionGas";
 	poisonGas1 -> damage = 15;
 	poisonGas1 -> AOE = 3;
@@ -133,8 +133,8 @@ void GameManager::BeginPlay()
 	healthPickUp1->location = Vector2i(2000, 1000);
 	healthPickUp1->name = "HealthPickUp1";
 	healthPickUp1->rotation = 0.0f;
-	healthPickUp1->xScale = 0.0f;
-	healthPickUp1->yScale = 0.0f;
+	healthPickUp1->xScale = 0.1f;
+	healthPickUp1->yScale = 0.1f;
 	healthPickUp1->imageName = "HealthPickUp";
 	healthPickUp1->addHealth = 30;
 	healthPickUp1->pickUpRange = 1;
@@ -262,9 +262,10 @@ void GameManager::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
 	Gdiplus::Matrix transform;
 	canvas.GetTransform(&transform);
 
-	canvas.ScaleTransform(0.2f, 0.2f);
+	/*canvas.ScaleTransform(0.2f, 0.2f);
 	canvas.RotateTransform(0.0f);
 	canvas.TranslateTransform(0.0f, 0.0f);
+	*/
 
 	// these lines of code tell all the classes images to render
 	for (GameEntity* objectPtr : objects)
@@ -276,7 +277,7 @@ void GameManager::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
 	canvas.SetTransform(&transform);
 
 
-	GameFrameworkInstance.DrawText(canvas, Vector2i(100, 0), 12, "Arial", "Hey! If you're seeing this then the game doesn't crash! Hopefully everything works :)", Gdiplus::Color::White);
+	GameFrameworkInstance.DrawText(canvas, Vector2i(50, 0), 7, "Arial", "Hey! If you're seeing this then the game doesn't crash! Hopefully everything works :)", Gdiplus::Color::White);
 
 	// Load the image file Untitled.png from the Images folder. Give it the unique name of Image1
 

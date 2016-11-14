@@ -14,7 +14,7 @@ Player::~Player()
 }
 
 
-void Player::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void Player::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imageplayer = GameFrameworkInstance.GetLoadedImage("Player");
 	GameFrameworkInstance.DrawImage(canvas, location, imageplayer);

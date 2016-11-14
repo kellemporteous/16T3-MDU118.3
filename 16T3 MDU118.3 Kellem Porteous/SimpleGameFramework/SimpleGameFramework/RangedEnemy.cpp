@@ -12,7 +12,7 @@ RangedEnemy::~RangedEnemy()
 {
 }
 
-void RangedEnemy::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void RangedEnemy::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imageRangedEnemy = GameFrameworkInstance.GetLoadedImage("RangedEnemy");
 	GameFrameworkInstance.DrawImage(canvas, location, imageRangedEnemy);

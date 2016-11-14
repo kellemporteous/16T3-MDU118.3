@@ -13,7 +13,7 @@ HealthPickUp::~HealthPickUp()
 {
 }
 
-void HealthPickUp::Render(Gdiplus::Graphics& canvas, const CRect& clientRect)
+void HealthPickUp::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {
 	ImageWrapper* imagehealingPickUp = GameFrameworkInstance.GetLoadedImage("HealthPickUp");
 	GameFrameworkInstance.DrawImage(canvas, location, imagehealingPickUp);
