@@ -32,6 +32,7 @@ void GameInput::Update(double deltaTime)
 	// The code below polls individual keys to determine if they are currently down.
 	if (GetKeyState('W') & 0x8000)
 	{
+		sprite.move(playerInstance.
 	}
 	if (GetKeyState('A') & 0x8000)
 	{

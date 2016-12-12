@@ -5,13 +5,17 @@ class Player:
 	public GameEntity
 {
 public:
-	Player();
-	virtual ~Player();
+	static Player& playerInstance();
+	
 
 	int health;
 	int damage;
 	int atkRange;
 	int moveSpeed;
+
+private:
+	Player();
+	virtual ~Player();
 
 protected:
 	virtual void SaveAsText_Internal(std::ostream& outputStream);
@@ -20,4 +24,5 @@ protected:
 	virtual void Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect);
 
 };
+#define PlayerInstance (Player::playerInstance())
 

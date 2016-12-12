@@ -13,6 +13,13 @@ Player::~Player()
 {
 }
 
+Player& Player::playerInstance()
+{
+	static Player instance;
+
+	return instance;
+}
+
 
 void Player::Render_Internal(Gdiplus::Graphics& canvas, const CRect& clientRect)
 {

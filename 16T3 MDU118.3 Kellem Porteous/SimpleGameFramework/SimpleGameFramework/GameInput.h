@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameFramework.h"
+#include "Player.h"
 
 class GameInput
 {
@@ -88,6 +89,7 @@ public:
 private:
 	GameInput();
 	~GameInput();
+
 };
 
 /**
