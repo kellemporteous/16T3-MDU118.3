@@ -9,6 +9,7 @@
 #include "HealingSmoke.h"
 #include "PoisonGas.h"
 #include "HealthPickUp.h"
+#include "Floor.h"
 #include <fstream>
 
 GameManager& GameManager::Instance()
@@ -42,19 +43,11 @@ void GameManager::BeginPlay()
 	GameFrameworkInstance.LoadImageResource(AppConfigInstance.GetResourcePath("Images/HealthPickUp.png"), "HealthPickUp");
 	GameFrameworkInstance.LoadImageResource(AppConfigInstance.GetResourcePath("Images/MeleeEnemy.png"), "MeleeEnemy");
 	GameFrameworkInstance.LoadImageResource(AppConfigInstance.GetResourcePath("Images/RangedEnemy.png"), "RangedEnemy");
+	GameFrameworkInstance.LoadImageResource(AppConfigInstance.GetResourcePath("Images/RangedEnemy.png"), "RangedEnemy");
+
 	
 	// These blocks of code are were their variables are implemented and manipulated
-	Player* player1 = new Player();
-	player1 -> location = Vector2i(1500, 1500);
-	player1 -> name = "Player1";
-	player1 -> rotation = 0.0f;
-	player1 -> xScale = 0.2f;
-	player1 -> yScale = 0.2f;
-	player1 -> imageName = "Player";
-	player1 -> health = 100;
-	player1 -> damage = 25;
-	player1 -> atkRange = 1;
-	player1 -> moveSpeed = 10;
+
 
 	MeleeEnemy* meleeEnemy1 = new MeleeEnemy();
 	meleeEnemy1 ->location = Vector2i(1800, 1800);
@@ -140,7 +133,6 @@ void GameManager::BeginPlay()
 	healthPickUp1->pickUpRange = 1;
 
 	// this block of code is so that i can save all references to a list rather that saving then individually
-	listObjects.push_back(player1);
 	listObjects.push_back(meleeEnemy1);
 	listObjects.push_back(rangedEnemy1);
 	listObjects.push_back(key1);
@@ -161,7 +153,6 @@ void GameManager::BeginPlay()
 	outputFile.close();
 
 	//deletes entities
-	delete player1;
 	delete meleeEnemy1;
 	delete rangedEnemy1;
 	delete key1;
@@ -198,7 +189,7 @@ void GameManager::BeginPlay()
 			break;
 
 		case egetRangeEnemy:
-			loadedEntityPtr = new RangedEnemy;
+			loadedEntityPtr = new RangedEnemy();
 			break;
 
 		case egetKey:
@@ -228,6 +219,15 @@ void GameManager::BeginPlay()
 		
 		loadedEntityPtr-> LoadFromText(inputFile);
 		objects.push_back(loadedEntityPtr);
+	}
+
+
+	for (int index = 0; index < gridSize; ++index)
+	{
+		Floor* floor1 = new Floor();
+		floor1 -> location.X;
+		floor1 -> location.Y;
+		floorObject.push_back(floor1);
 	}
 
 	// End example code

@@ -113,6 +113,7 @@
     <ClInclude Include="ChildView.h" />
     <ClInclude Include="CPUUtils.h" />
     <ClInclude Include="Door.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameFramework.h" />
     <ClInclude Include="GameInput.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="CPUUtils.cpp" />
     <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameFramework.cpp" />
     <ClCompile Include="GameInput.cpp" />

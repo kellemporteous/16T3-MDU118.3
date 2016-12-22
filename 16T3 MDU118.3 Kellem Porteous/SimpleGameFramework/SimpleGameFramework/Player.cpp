@@ -6,6 +6,16 @@ Player::Player():
 	GameEntity()
 {
 	type = egetPlayer;
+	location = Vector2i(1500, 1500);
+	name = "Player1";
+	rotation = 0.0f;
+	xScale = 0.2f;
+	yScale = 0.2f;
+	imageName = "Player";
+	health = 100;
+	damage = 25;
+	atkRange = 1;
+	moveSpeed = 10;
 }
 
 

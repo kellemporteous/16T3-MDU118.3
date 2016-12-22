@@ -2,6 +2,7 @@
 
 #include "GameFramework.h"
 #include "GameEntity.h"
+#include "Floor.h"
 
 class GameManager
 {
@@ -29,6 +30,12 @@ public:
 	 */
 	void Render(Gdiplus::Graphics& canvas, const CRect& clientRect);
 
+public:
+	int floorSize = 64;
+	int gridSize = 117;
+	int widthScreen = 800;
+	int heightScreen = 600;
+
 private:
 	GameManager();
 	~GameManager();
@@ -36,7 +43,7 @@ private:
 	//these are the lists that the classes are pushed back to
 	std::vector<GameEntity*> objects;
 	std::vector<GameEntity*> listObjects;
-	
+	std::vector<Floor*> floorObject;
 
 
 };
